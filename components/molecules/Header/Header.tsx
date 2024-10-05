@@ -5,14 +5,20 @@ export const Header = () => {
 		<header className="header">
 		<nav className="nav">
 			<ul className="navlist">
-			<Link href="">Home</Link>
-			<Link href="">About us</Link>
-			<Link href="">Contact</Link>
+			<li>
+				<Link href="/">Home</Link>
+			</li>
+			<li>
+				<Link href="/about">About us</Link>
+			</li>
+			<li>
+				<Link href="/contact">Contact</Link>
+			</li>
 			</ul>
 		</nav>
 		<div className="sesion">
-			<button>Login</button>
-			<button>Register</button>
+			<Link href="/login">Login</Link>
+			<Link href="/register">Register</Link>
 		</div>
 		</header>
 	);
