@@ -1,6 +1,7 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
+import './Form.css';
 
 export const RegisterForm = () => {
     const [email, setEmail] = useState('');
@@ -13,32 +14,34 @@ export const RegisterForm = () => {
     };
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-        />
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-        />
-        <button type="submit">Register</button>
-        </form>
+        <div className="container">  {/* Contenedor para centrar el formulario */}
+            <form className="form" onSubmit={handleSubmit}>
+                <label htmlFor="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <label htmlFor="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                />
+                <button type="submit">Register</button>
+            </form>
+        </div>
     );
 };

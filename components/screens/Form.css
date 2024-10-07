@@ -1,0 +1,78 @@
+/* formStyles.css */
+
+/* Estilos para el contenedor */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para el formulario */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #7d615b;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #7d615b;
+    background-color: #f9f9f9;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+  }
+  
+  input:focus {
+    border-color: #e16930;
+    outline: none;
+  }
+  
+  button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #e16930;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #d95f2c;
+  }
+  
+  button:active {
+    background-color: #c85428;
+  }
+  
+  /* Estilos para el enlace de registro */
+  .register-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #ff7f50; /* Color salmón */
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
