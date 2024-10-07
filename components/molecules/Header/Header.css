@@ -6,12 +6,12 @@
     padding: 20px 40px;
     background-color: #faeae4;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Mantiene el header fijo en la parte superior */
+    position: sticky; 
     top: 0;
     z-index: 100;
   }
   
-  /* Estilo de la barra de navegación */
+  
   .nav {
     display: flex;
   }
@@ -26,7 +26,7 @@
   
   .navlist li {
     font-size: 16px;
-    transition: transform 0.3s ease; /* Transición para el hover */
+    transition: transform 0.3s ease; 
   }
   
   /* Efecto hover para los enlaces de navegación */
