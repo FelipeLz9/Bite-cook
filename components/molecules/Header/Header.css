@@ -61,7 +61,7 @@
     width: 100%;
   }
   
-  /* Estilo para la sesión (login, register) */
+  
   .sesion {
     display: flex;
     gap: 15px;
@@ -82,10 +82,10 @@
     background-color: #ff7f50;
     color: white;
     border: 2px solid #ff7f50;
-    transform: scale(1.05); /* Efecto de agrandar el botón */
+    transform: scale(1.05); 
   }
   
   .sesion a:active {
-    transform: scale(0.95); /* Efecto de presionar el botón */
+    transform: scale(0.95); 
   }
   
