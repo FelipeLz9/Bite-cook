@@ -1,0 +1,91 @@
+/* Estilo general del header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Mantiene el header fijo en la parte superior */
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Estilo de la barra de navegación */
+  .nav {
+    display: flex;
+  }
+  
+  .navlist {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navlist li {
+    font-size: 16px;
+    transition: transform 0.3s ease; /* Transición para el hover */
+  }
+  
+  /* Efecto hover para los enlaces de navegación */
+  .navlist a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Subrayado animado en los enlaces */
+  .navlist a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #ff7f50;
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover que cambia el color y activa el subrayado */
+  .navlist a:hover {
+    color: #ff7f50;
+    transform: translateY(-2px); /* Mueve ligeramente el enlace hacia arriba */
+  }
+  
+  .navlist a:hover::after {
+    width: 100%;
+  }
+  
+  /* Estilo para la sesión (login, register) */
+  .sesion {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .sesion a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sesion a:hover {
+    background-color: #ff7f50;
+    color: white;
+    border: 2px solid #ff7f50;
+    transform: scale(1.05); /* Efecto de agrandar el botón */
+  }
+  
+  .sesion a:active {
+    transform: scale(0.95); /* Efecto de presionar el botón */
+  }
+  
