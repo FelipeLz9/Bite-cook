@@ -1,6 +1,3 @@
-/* formStyles.css */
-
-/* Estilos para el contenedor */
 .container {
     display: flex;
     justify-content: center;
@@ -9,7 +6,7 @@
     background-color: #f2f2f2;
   }
   
-  /* Estilos para el formulario */
+  
   .form {
     display: flex;
     flex-direction: column;
@@ -62,11 +59,11 @@
     background-color: #c85428;
   }
   
-  /* Estilos para el enlace de registro */
+  
   .register-link {
     text-align: center;
     margin-top: 1rem;
-    color: #ff7f50; /* Color salmón */
+    color: #ff7f50; 
     font-size: 1rem;
     text-decoration: none;
     cursor: pointer;
