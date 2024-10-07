@@ -51,10 +51,10 @@
     transition: width 0.3s ease;
   }
   
-  /* Hover que cambia el color y activa el subrayado */
+  
   .navlist a:hover {
     color: #ff7f50;
-    transform: translateY(-2px); /* Mueve ligeramente el enlace hacia arriba */
+    transform: translateY(-2px);
   }
   
   .navlist a:hover::after {
