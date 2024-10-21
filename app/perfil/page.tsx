@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Usamos el router de Next.js para redirección
 import Footer from '@/components/molecules/Footer/Footer';
-import { Header } from '../components/molecules/Header/Header';
-import Card from '../components/atoms/Card/Card';
-import CATSection from '../components/organisms/CallToAction/CATSection';
+import { Header } from '@/components/molecules/Header/Header';
+import { ProfileTemplate } from '@/components/screens/ProfileTemplate';
+import Sidebar from '@/components/organisms/Sidebar'; // Asegúrate de importar Sidebar correctamente
+import './page.css';
 
 interface Dish {
     id: string;
@@ -15,15 +16,21 @@ interface Dish {
     description: string;
 }
 
-export default function Home() {
+export default function Perfil() {
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Estado para verificar si está autenticado
     const router = useRouter(); // Usamos el router para la redirección
 
     useEffect(() => {
-       
-        // Llamada a la API para obtener los platos
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            router.push('/login');
+        } else {
+            setIsAuthenticated(true);
+        }
+
         const fetchDishes = async () => {
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/dishes`);
@@ -41,10 +48,9 @@ export default function Home() {
         };
 
         fetchDishes();
-    }, [router]); // Se añade router a las dependencias
+    }, [router]);
 
     const handleLogout = () => {
-        // Eliminar el token de autenticación y redirigir al login
         localStorage.removeItem('authToken');
         router.push('/login');
     };
@@ -57,23 +63,13 @@ export default function Home() {
         return <div>Error: {error}</div>;
     }
 
-
     return (
-        <div style={{ backgroundColor: 'white' }}> {/* Fondo blanco */}
+        <div className="profile-page">
             <Header />
-            <CATSection />
-            {dishes.map((dish) => (
-                <Card
-                    key={dish.id}
-                    title={dish.name}
-                    price={dish.price}
-                    image={dish.image}
-                    description={dish.description}
-                    isTrending={false} // Cambia según tu lógica para marcar un plato como "Trending"
-                />
-            ))}
-
-           
+            <div className="content-container">
+                <ProfileTemplate onLogout={handleLogout} />
+                <Sidebar onLogout={handleLogout} />
+            </div>
             <Footer />
         </div>
     );

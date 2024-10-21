@@ -10,7 +10,7 @@ export const Header = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/about">About us</Link>
+            <Link href="/aboutUs">About us</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
@@ -18,6 +18,7 @@ export const Header = () => {
         </ul>
       </nav>
       <div className="sesion">
+        <Link href="/perfil">Perfil</Link>
         <Link href="/login">Login</Link>
         <Link href="/register">Register</Link>
       </div>

@@ -32,12 +32,12 @@
     font-size: 20px;
     font-weight: bold;
     margin: 10px 0;
-    color: #333;
+    color: #000000;
   }
   
   .dish-card__price {
     font-size: 18px;
-    color: #ff7f50; 
+    color: #ff4d4d; 
     margin-bottom: 15px;
   }
   
@@ -60,8 +60,8 @@
   
   
   .info-btn {
-    background-color: #ff7f50;
-    color: white;
+    background-color: #ff4d4d;
+    color: rgb(0, 0, 0);
   }
   
   .info-btn:hover {
@@ -76,7 +76,7 @@
   }
   
   .cart-btn:hover {
-    background-color: #555; 
+    background-color: #050505; 
     transform: scale(1.05);
   }
   
@@ -85,3 +85,23 @@
     margin-right: 5px;
   }
   
+  .dish-card__description {
+    color: #000000; /* Texto negro */
+    padding: 15px;
+    font-size: 16px;
+}
+
+.close-btn {
+    background-color: transparent; /* Botón casi invisible inicialmente */
+    color: rgba(0, 0, 0, 0.2); /* Color suave al inicio */
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #ff4d4d; /* Color salmón al hacer hover */
+    color: white; /* Texto blanco en hover */
+    transform: scale(1.05); /* Ligeramente más grande al hacer hover */
+}
