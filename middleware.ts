@@ -3,30 +3,30 @@ import { NextRequest } from 'next/server';
 
 const locales = ['en', 'es'];
 
-const middleware = createMiddleware({
+const intlMiddleware = createMiddleware({
   locales,
   defaultLocale: 'es'
 });
 
 export default function (req: NextRequest) {
   const pathname = req.nextUrl.pathname;
-  
+
   if (pathname === '/') {
-    return middleware(req);
+    return intlMiddleware(req);
   }
 
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  const hasLocaleInPathname = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameIsMissingLocale) {
-    const locale = req.headers.get('accept-language')?.split(',')[0].split('-')[0] || 'en';
-    return Response.redirect(new URL(`/${locale}${pathname}`, req.url));
+  if (hasLocaleInPathname) {
+    return intlMiddleware(req);
   }
 
-  return middleware(req);
+  const detectedLocale = req.headers.get('accept-language')?.split(',')[0].split('-')[0] || 'es';
+  return Response.redirect(new URL(`/${detectedLocale}${pathname}`, req.url));
 }
 
 export const config = {
-  matcher: ["/", "/:locale/"],
+  matcher: ['/((?!api|_next/static|favicon.ico).*)'],
 };

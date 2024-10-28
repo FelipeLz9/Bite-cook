@@ -1,4 +1,14 @@
 {
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Regístrate",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "loginError": "Error al iniciar sesión. Inténtalo de nuevo.",
+    "registerSuccess": "Usuario registrado con éxito.",
+    "registerError": "Error al registrar el usuario."
+  },
   "Header": {
     "home": "Inicio",
     "aboutUs": "Sobre nosotros",

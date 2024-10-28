@@ -49,11 +49,11 @@ export default function Home({ params: { locale } }: { params: { locale: string 
     };
 
     if (loading) {
-        return <div>{t('loading')}</div>;
+        return <div>loading</div>;
     }
 
     if (error) {
-        return <div>{t('error', { error })}</div>;
+        return <div>('error', { error })</div>;
     }
 
     return (

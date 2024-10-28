@@ -6,6 +6,7 @@ import Footer from '@/components/molecules/Footer/Footer';
 import { Header } from '@/components/molecules/Header/Header';
 import { ProfileTemplate } from '@/components/screens/ProfileTemplate';
 import Sidebar from '@/components/organisms/Sidebar'; // Asegúrate de importar Sidebar correctamente
+import { useLocale } from 'next-intl';
 import './page.css';
 
 interface Dish {
@@ -22,11 +23,12 @@ export default function Perfil() {
     const [error, setError] = useState<string | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Estado para verificar si está autenticado
     const router = useRouter(); // Usamos el router para la redirección
+    const locale = useLocale();
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
         if (!token) {
-            router.push('/login');
+            router.push(`/${locale}/login`);
         } else {
             setIsAuthenticated(true);
         }
@@ -52,7 +54,7 @@ export default function Perfil() {
 
     const handleLogout = () => {
         localStorage.removeItem('authToken');
-        router.push('/login');
+        router.push(`/${locale}/login`);
     };
 
     if (loading) {

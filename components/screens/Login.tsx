@@ -1,42 +1,41 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Importa el router de Next.js
-import './Form.css'; 
+import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import './Form.css';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);  // Estado para manejar errores
-  const router = useRouter(); // Inicializa el router
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations('auth');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      // Enviar credenciales al backend
       const response = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }), // Enviar email y password
+        body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
         const { token } = await response.json();
-
-        // Guardar el token en el localStorage
         localStorage.setItem('authToken', token);
-
-        // Redireccionar a la página principal o a la ruta protegida usando el router de Next.js
-        router.push('/perfil');
+        router.push(`/${locale}/perfil`);
       } else {
         const { message } = await response.json();
-        setError(message);  // Mostrar mensaje de error si las credenciales son incorrectas
+        setError(message || t('loginError'));
       }
-    } catch (error) {
-      setError('Error al iniciar sesión. Inténtalo de nuevo.');
+    } catch {
+      setError(t('loginError'));
     }
   };
 
@@ -44,7 +43,7 @@ export const LoginForm = () => {
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
         {error && <p className="error-message">{error}</p>}
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">{t('email')}</label>
         <input
           type="email"
           id="email"
@@ -52,7 +51,7 @@ export const LoginForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">{t('password')}</label>
         <input
           type="password"
           id="password"
@@ -60,9 +59,9 @@ export const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
-        <a href="/register" className="register-link">
-          Regístrate aquí
+        <button type="submit">{t('login')}</button>
+        <a href={`/${locale}/register`} className="register-link">
+          {t('register')}
         </a>
       </form>
     </div>

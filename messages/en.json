@@ -1,4 +1,14 @@
 {
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "loginError": "Login failed. Please try again.",
+    "registerSuccess": "User registered successfully.",
+    "registerError": "Registration failed. Please try again."
+  },
   "Header": {
     "home": "Home",
     "aboutUs": "About us",
