@@ -1,23 +1,29 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
-  return (
+  const t = useTranslations('Footer');
+  const pathname = usePathname();
 
+  return (
     <footer className="footer">
       <div className="footer__links">
-        <Link href="#">About</Link>
-        <Link href="#">Read our blog</Link>
-        <Link href="#">Sign up to deliver</Link>
-        <Link href="#">Add your restaurant</Link>
-        <Link href="#">Get help</Link>
-        <Link href="#">See all cities</Link>
-        <Link href="#">Restaurants near me</Link>
-        <Link href="#">View all cuisines</Link>
-        <Link href="#">View all countries</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('about')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('blog')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('signUpToDeliver')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('addRestaurant')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('getHelp')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('seeAllCities')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('restaurantsNearMe')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('viewAllCuisines')}</Link>
+        <Link href="#" locale={pathname.split('/')[1]}>{t('viewAllCountries')}</Link>
       </div>
 
       <div className="footer__social-icons">
@@ -33,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__copyright">
-        <p>©2024 PipsPabsCompany</p>
+        <p>{t('copyright', { year: new Date().getFullYear() })}</p>
       </div>
     </footer>
   );

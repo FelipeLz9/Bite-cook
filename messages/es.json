@@ -1,0 +1,33 @@
+{
+  "Header": {
+    "home": "Inicio",
+    "aboutUs": "Sobre nosotros",
+    "contact": "Contacto",
+    "profile": "Perfil",
+    "login": "Iniciar sesión",
+    "register": "Registrarse"
+  },
+  "Footer": {
+    "about": "Acerca de",
+    "blog": "Lee nuestro blog",
+    "signUpToDeliver": "Regístrate para entregar",
+    "addRestaurant": "Añade tu restaurante",
+    "getHelp": "Obtén ayuda",
+    "seeAllCities": "Ver todas las ciudades",
+    "restaurantsNearMe": "Restaurantes cerca de mí",
+    "viewAllCuisines": "Ver todas las cocinas",
+    "viewAllCountries": "Ver todos los países",
+    "copyright": "©{year} PipsPabsCompany"
+  },
+  "Card": {
+    "price": "${price}",
+    "moreInfo": "Más información",
+    "addToCart": "Añadir al carrito",
+    "close": "Cerrar"
+  },
+  "CATSection": {
+    "title": "Elige tu plato favorito y pídelo ahora",
+    "searchPlaceholder": "Busca un plato",
+    "orderNow": "Pedir ahora"
+  }
+}

@@ -1,20 +1,23 @@
+'use client';
+
 import React, { useState } from 'react';
-import '../Card/Card.css'; // Asegúrate de que la ruta es correcta
+import { useTranslations } from 'next-intl';
+import '../Card/Card.css';
 
 interface DishCardProps {
     title: string;
     price: number;
     image: string;
     isTrending: boolean;
-    description: string;  // Añadimos la descripción
+    description: string;
 }
 
 const Card = ({ title, price, image, isTrending, description }: DishCardProps) => {
     const [showDescription, setShowDescription] = useState(false);
+    const t = useTranslations('Card');
 
-    // Función para manejar el botón de "More Info"
     const handleMoreInfoClick = () => {
-        setShowDescription(!showDescription);  // Alterna la visibilidad de la pestaña
+        setShowDescription(!showDescription);
     };
 
     return (
@@ -22,26 +25,25 @@ const Card = ({ title, price, image, isTrending, description }: DishCardProps) =
             <img src={image} alt={title} className="dish-card__image" />
             <div className="dish-card__info">
                 <h3 className="dish-card__title">{title}</h3>
-                {price && <p className="dish-card__price">${price.toFixed(2)}</p>}
+                {price && <p className="dish-card__price">{t('price', { price: price.toFixed(2) })}</p>}
                 <div className="dish-card__actions">
                     {isTrending ? (
                         <>
-                            <button className="info-btn" onClick={handleMoreInfoClick}>More Info</button>
+                            <button className="info-btn" onClick={handleMoreInfoClick}>{t('moreInfo')}</button>
                             <button className="cart-btn">
-                                <i className="cart-icon">🛒</i> Add to Cart
+                                <i className="cart-icon">🛒</i> {t('addToCart')}
                             </button>
                         </>
                     ) : (
-                        <button className="info-btn" onClick={handleMoreInfoClick}>More Info</button>
+                        <button className="info-btn" onClick={handleMoreInfoClick}>{t('moreInfo')}</button>
                     )}
                 </div>
             </div>
             
-            
             {showDescription && (
                 <div className="dish-card__description">
                     <p>{description}</p>
-                    <button className="close-btn" onClick={handleMoreInfoClick}>Close</button>
+                    <button className="close-btn" onClick={handleMoreInfoClick}>{t('close')}</button>
                 </div>
             )}
         </div>

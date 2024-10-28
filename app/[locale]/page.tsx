@@ -1,11 +1,12 @@
-"use client"; // Esta línea debe ser la primera en el archivo
+'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; // Usamos el router de Next.js para redirección
+import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Footer from '@/components/molecules/Footer/Footer';
-import { Header } from '../components/molecules/Header/Header';
-import Card from '../components/atoms/Card/Card';
-import CATSection from '../components/organisms/CallToAction/CATSection';
+import { Header } from '@/components/molecules/Header/Header';
+import Card from '@/components/atoms/Card/Card';
+import CATSection from '@/components/organisms/CallToAction/CATSection';
 
 interface Dish {
     id: string;
@@ -15,15 +16,14 @@ interface Dish {
     description: string;
 }
 
-export default function Home() {
+export default function Home({ params: { locale } }: { params: { locale: string } }) {
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const router = useRouter(); // Usamos el router para la redirección
+    const router = useRouter();
+    const t = useTranslations();
 
     useEffect(() => {
-       
-        // Llamada a la API para obtener los platos
         const fetchDishes = async () => {
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/dishes`);
@@ -41,25 +41,23 @@ export default function Home() {
         };
 
         fetchDishes();
-    }, [router]); // Se añade router a las dependencias
+    }, []);
 
     const handleLogout = () => {
-        // Eliminar el token de autenticación y redirigir al login
         localStorage.removeItem('authToken');
-        router.push('/login');
+        router.push(`/${locale}/login`);
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>{t('loading')}</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div>{t('error', { error })}</div>;
     }
 
-
     return (
-        <div style={{ backgroundColor: 'white' }}> {/* Fondo blanco */}
+        <div style={{ backgroundColor: 'white' }}>
             <Header />
             <CATSection />
             {dishes.map((dish) => (
@@ -69,11 +67,9 @@ export default function Home() {
                     price={dish.price}
                     image={dish.image}
                     description={dish.description}
-                    isTrending={false} // Cambia según tu lógica para marcar un plato como "Trending"
+                    isTrending={false}
                 />
             ))}
-
-           
             <Footer />
         </div>
     );
