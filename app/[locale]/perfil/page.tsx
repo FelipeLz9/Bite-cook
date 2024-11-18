@@ -44,7 +44,7 @@ export default function Profile() {
                 }
                 const data = await response.json();
                 setDishes(data);
-            } catch (error: any) {
+            } catch (error: unknown) {
                 console.error('Error fetching dishes:', error);
                 setError(error.message);
             } finally {
