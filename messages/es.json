@@ -39,5 +39,12 @@
     "title": "Elige tu plato favorito y pídelo ahora",
     "searchPlaceholder": "Busca un plato",
     "orderNow": "Pedir ahora"
+  },
+  "Profile": {
+    "title": "My Profile",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "saveChanges": "Save Changes"
   }
 }

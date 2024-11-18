@@ -1,12 +1,12 @@
-"use client"; // Esta línea debe ser la primera en el archivo
+"use client";
 
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; // Usamos el router de Next.js para redirección
+import { useRouter } from 'next/navigation';
 import Footer from '@/components/molecules/Footer/Footer';
 import { Header } from '@/components/molecules/Header/Header';
 import { ProfileTemplate } from '@/components/screens/ProfileTemplate';
-import Sidebar from '@/components/organisms/Sidebar'; // Asegúrate de importar Sidebar correctamente
-import { useLocale } from 'next-intl';
+import Sidebar from '@/components/organisms/Sidebar';
+import { useLocale, useTranslations } from 'next-intl';
 import './page.css';
 
 interface Dish {
@@ -17,13 +17,14 @@ interface Dish {
     description: string;
 }
 
-export default function Perfil() {
+export default function Profile() {
     const [dishes, setDishes] = useState<Dish[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Estado para verificar si está autenticado
-    const router = useRouter(); // Usamos el router para la redirección
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const router = useRouter();
     const locale = useLocale();
+    const t = useTranslations('Profile');
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
@@ -50,19 +51,19 @@ export default function Perfil() {
         };
 
         fetchDishes();
-    }, [router]);
+    }, [router, locale]);
 
     const handleLogout = () => {
         localStorage.removeItem('authToken');
-        router.push(`/${locale}/login`);
+        router.push(`/${locale}/`);
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>{t('loading')}</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div>{t('error', { error })}</div>;
     }
 
     return (

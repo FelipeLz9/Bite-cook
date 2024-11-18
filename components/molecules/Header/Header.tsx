@@ -1,16 +1,29 @@
 'use client';
 
 import Link from "next/link";
-import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
+import { useLocale, useTranslations } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
 import "../Header/Header.css";
+import { useEffect, useState } from "react";
+import { LoginRegister } from "@/components/atoms/LoginRegister/LoginRegister";
 
 export const Header = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const t = useTranslations('Header');
   const pathname = usePathname();
 
   const currentLocale = pathname.split('/')[1] || 'es';
 
+  const router = useRouter(); // Usamos el router para la redirección
+  const locale = useLocale();
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+        setIsAuthenticated(false)
+    } else {
+        setIsAuthenticated(true);
+    }
+  }, [])
   return (
     <header className="header">
       <nav className="nav">
@@ -27,9 +40,12 @@ export const Header = () => {
         </ul>
       </nav>
       <div className="sesion">
-        <Link href={`/${currentLocale}/perfil`}>{t('profile')}</Link>
-        <Link href={`/${currentLocale}/login`}>{t('login')}</Link>
-        <Link href={`/${currentLocale}/register`}>{t('register')}</Link>
+        
+        {
+          isAuthenticated?
+          <Link href={`/${currentLocale}/perfil`}>{t('profile')}</Link>
+          : <LoginRegister></LoginRegister>
+        }
       </div>
     </header>
   );

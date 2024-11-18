@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Input from '../atoms/InputField'; // Asegúrate de que sea el componente correcto
+import Input from '../atoms/InputField';
 import PasswordInput from '../molecules/PasswordField';
-import { Button } from '../atoms/Button';
+import Button from '../atoms/Button';
 import './ProfileForm.css';
 
 export const ProfileForm = () => {

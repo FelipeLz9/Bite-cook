@@ -39,5 +39,13 @@
     "title": "Choose your favorite dish and order it now",
     "searchPlaceholder": "Search for a dish",
     "orderNow": "Order Now"
+  },
+  "Profile": {
+    "title": "Mi perfil",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "saveChanges": "Guardar cambios"
   }
+
 }
