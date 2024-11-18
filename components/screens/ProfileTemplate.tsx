@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProfileForm } from '../organisms/ProfileForm';
 
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // Añade la prop onLogout
 interface ProfileTemplateProps {

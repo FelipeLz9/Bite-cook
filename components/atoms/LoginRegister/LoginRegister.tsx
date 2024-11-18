@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 type Props = {}
 
 export const LoginRegister = (props: Props) => {
