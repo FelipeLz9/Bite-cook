@@ -2,6 +2,7 @@
   "auth": {
     "login": "Iniciar sesión",
     "register": "Regístrate",
+    "name": "Nombre",
     "email": "Correo electrónico",
     "password": "Contraseña",
     "confirmPassword": "Confirmar contraseña",

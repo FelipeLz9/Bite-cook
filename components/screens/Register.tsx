@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Importar useRouter
 import axios from "axios";
 import { useTranslations } from "next-intl";
 import "./Form.css";
 
 export const RegisterForm = () => {
+  const router = useRouter(); // Inicializar useRouter
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,9 +25,16 @@ export const RegisterForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:3001/api/users", { email, password });
+      await axios.post("http://localhost:3001/api/users", { name, email, password });
       setSuccessMessage(t("registerSuccess"));
       setErrorMessage("");
+
+      // Redirigir al login después de un registro exitoso
+      setTimeout(() => {
+        router.push("/${locale}/login");
+      }, 1500); // Esperar 1.5 segundos para mostrar el mensaje de éxito
+
+      setName("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
@@ -37,6 +47,14 @@ export const RegisterForm = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
+        <label htmlFor="name">{t("name")}</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <label htmlFor="email">{t("email")}</label>
         <input
           type="email"
