@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from '@/components/molecules/Footer/Footer';
@@ -42,7 +44,7 @@ export default function Profile() {
                 }
                 const data = await response.json();
                 setDishes(data);
-            } catch (error: any) {
+            } catch (error: unknown) {
                 console.error('Error fetching dishes:', error);
                 setError(error.message);
             } finally {

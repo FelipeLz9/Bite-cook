@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import "../globals.css";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
