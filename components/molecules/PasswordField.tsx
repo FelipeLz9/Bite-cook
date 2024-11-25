@@ -21,8 +21,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({ value, onChange }) => {
           type={showPassword ? 'text' : 'password'}
           value={value}
           onChange={onChange}
-          placeholder="Contraseña"
-        />
+          placeholder="Contraseña" name={''}        />
         <button type="button" onClick={() => setShowPassword(!showPassword)}>
           <i className="eye-icon">{showPassword ? '🙈' : '👁️'}</i>
         </button>

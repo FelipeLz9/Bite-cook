@@ -3,6 +3,7 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 
 type Props = {}
 

@@ -42,10 +42,27 @@
     "orderNow": "Pedir ahora"
   },
   "Profile": {
-    "title": "My Profile",
-    "name": "Name",
-    "email": "Email",
-    "password": "Password",
-    "saveChanges": "Save Changes"
+    "title": "Mi Perfil",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "saveChanges": "Guardar cambios",
+    "loading": "Cargando...",
+    "error": "Error: {error}"
+  },
+  "AdminPage": {
+    "title": "Añadir un producto",
+    "name": "Nombre",
+    "namePlaceholder": "ej., Zapatillas de lana para mujer",
+    "description": "Descripción",
+    "descriptionPlaceholder": "ej., Los zapatos más cómodos del mundo para la vida en movimiento.",
+    "price": "Precio",
+    "pricePlaceholder": "ej., 95",
+    "image": "Imagen",
+    "imagePlaceholder": "ej., http://...",
+    "addProduct": "Añadir producto",
+    "errorMessage": "Error al añadir el producto",
+    "successMessage": "Producto añadido con éxito"
   }
 }
+

@@ -9,7 +9,7 @@
     "loginError": "Login error. Please try again.",
     "registerError": "Passwords do not match.",
     "registerSuccess": "Registration successful!"
-    },
+  },
   "Header": {
     "home": "Home",
     "aboutUs": "About us",
@@ -42,11 +42,27 @@
     "orderNow": "Order Now"
   },
   "Profile": {
-    "title": "Mi perfil",
-    "name": "Nombre",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "saveChanges": "Guardar cambios"
+    "title": "My Profile",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "saveChanges": "Save Changes",
+    "loading": "Loading...",
+    "error": "Error: {error}"
+  },
+  "AdminPage": {
+    "title": "Add a product",
+    "name": "Name",
+    "namePlaceholder": "e.g., Women's Wool Runners",
+    "description": "Description",
+    "descriptionPlaceholder": "e.g., The world's most comfortable shoes for life on the go.",
+    "price": "Price",
+    "pricePlaceholder": "e.g., 95",
+    "image": "Image",
+    "imagePlaceholder": "e.g., http://...",
+    "addProduct": "Add product",
+    "errorMessage": "Error adding the product",
+    "successMessage": "Product added successfully"
   }
-
 }
+
