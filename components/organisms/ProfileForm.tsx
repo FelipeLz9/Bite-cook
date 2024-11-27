@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import Input from '../atoms/InputField';  
 import PasswordInput from '../molecules/PasswordField';

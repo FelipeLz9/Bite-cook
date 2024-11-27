@@ -1,32 +1,39 @@
-import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+import { setRequestLocale } from 'next-intl/server';
 
 const locales = ['en', 'es'];
+const defaultLocale = 'es';
 
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale: 'es'
-});
+import { NextRequest } from 'next/server';
 
-export default function (req: NextRequest) {
-  const pathname = req.nextUrl.pathname;
+export default function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl;
 
-  if (pathname === '/') {
-    return intlMiddleware(req);
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/_next/static') ||
+    pathname === '/favicon.ico'
+  ) {
+    return NextResponse.next();
   }
 
-  const hasLocaleInPathname = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  const hasLocale = locales.some((locale) =>
+    pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (hasLocaleInPathname) {
-    return intlMiddleware(req);
+  if (hasLocale) {
+    const locale = pathname.split('/')[1];
+    setRequestLocale(locale); 
+    return NextResponse.next();
   }
 
-  const detectedLocale = req.headers.get('accept-language')?.split(',')[0].split('-')[0] || 'es';
-  return Response.redirect(new URL(`/${detectedLocale}${pathname}`, req.url));
+  const detectedLocale =
+    req.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || defaultLocale;
+
+  setRequestLocale(detectedLocale); 
+  return NextResponse.redirect(new URL(`/${detectedLocale}${pathname}`, req.url));
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|favicon.ico).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)'],
 };

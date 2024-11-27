@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import InputField from '../atoms/InputField';
 import Label from '../atoms/Label';
