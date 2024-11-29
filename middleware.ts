@@ -1,12 +1,9 @@
 import { NextResponse } from 'next/server';
-import { setRequestLocale } from 'next-intl/server';
 
 const locales = ['en', 'es'];
 const defaultLocale = 'es';
 
-import { NextRequest } from 'next/server';
-
-export default function middleware(req: NextRequest) {
+export default function middleware(req: { nextUrl: { pathname: any; }; headers: { get: (arg0: string) => string; }; url: string | URL | undefined; }) {
   const { pathname } = req.nextUrl;
 
   if (
@@ -22,18 +19,18 @@ export default function middleware(req: NextRequest) {
   );
 
   if (hasLocale) {
-    const locale = pathname.split('/')[1];
-    setRequestLocale(locale); 
     return NextResponse.next();
   }
 
+  const acceptLanguage = req.headers.get('accept-language') || '';
   const detectedLocale =
-    req.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || defaultLocale;
+    locales.find((locale) => acceptLanguage.includes(locale)) || defaultLocale;
 
-  setRequestLocale(detectedLocale); 
-  return NextResponse.redirect(new URL(`/${detectedLocale}${pathname}`, req.url));
+  return NextResponse.redirect(
+    new URL(`/${detectedLocale}${pathname}`, req.url)
+  );
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)'],
+  matcher: ['/((?!api|_next/static|favicon.ico).*)'],
 };
