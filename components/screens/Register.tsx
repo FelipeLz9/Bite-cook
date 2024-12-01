@@ -28,7 +28,7 @@ export const RegisterForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:3001/api/users", { name, email, password });
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users`, { name, email, password });
       setSuccessMessage(t("registerSuccess"));
       setErrorMessage("");
 
