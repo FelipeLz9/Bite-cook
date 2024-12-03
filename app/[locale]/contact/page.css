@@ -1,0 +1,107 @@
+/* Fondo de la página con imagen */
+.contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://www.elheraldo.co/resizer/v2/Z6MAHB7RTFGNHJJZM7E5ZZGA7M.jpg?smart=true&auth=7e0884c16d889c55d88557113d5fd56179d47051f55cd2ea7da6fd1e81cb6a9f&width=1200&height=675");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .contact-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.267); /* Más claridad en el fondo */
+    z-index: 0;
+  }
+  
+  /* Contenedor del formulario */
+  .contact-us__container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.87); /* Fondo blanco semi-transparente */
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .contact-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .contact-us p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  /* Estilos del formulario */
+  .contact-us__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-us__form label {
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: left;
+    color: #666;
+  }
+  
+  .contact-us__form input,
+  .contact-us__form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  .contact-us__form input:focus,
+  .contact-us__form textarea:focus {
+    border-color: #ff6f61;
+    outline: none;
+    box-shadow: 0 0 4px rgba(255, 111, 97, 0.5);
+  }
+  
+  .contact-us__form textarea {
+    resize: none;
+    min-height: 120px;
+  }
+  
+  .contact-us__button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-us__button:hover {
+    background-color: #e65a50;
+    transform: scale(1.05);
+  }
+  
+  .contact-us__button:active {
+    transform: scale(0.98);
+  }
+  

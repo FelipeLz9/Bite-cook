@@ -1,91 +1,143 @@
 /* Estilo general del header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #faeae4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky; 
-    top: 0;
-    z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #faeae4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; 
+  top: 0;
+  z-index: 100;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+}
+
+/* Lista de navegación */
+.navlist {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navlist li {
+  font-size: 16px;
+  transition: transform 0.3s ease; 
+}
+
+/* Enlaces de navegación */
+.navlist a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navlist a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #ff7f50;
+  transition: width 0.3s ease;
+}
+
+.navlist a:hover {
+  color: #ff7f50;
+  transform: translateY(-2px);
+}
+
+.navlist a:hover::after {
+  width: 100%;
+}
+
+/* Sesión */
+.sesion {
+  display: flex;
+  gap: 15px;
+}
+
+.sesion a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.3s ease;
+}
+
+.sesion a:hover {
+  background-color: #ff7f50;
+  color: white;
+  border: 2px solid #ff7f50;
+  transform: scale(1.05); 
+}
+
+.sesion a:active {
+  transform: scale(0.95); 
+}
+
+/* Responsivo: Tablets */
+@media (max-width: 768px) {
+  .header {
+      flex-wrap: wrap; /* Permitir que los elementos se ajusten en línea */
+      padding: 15px 20px;
   }
-  
-  
-  .nav {
-    display: flex;
-  }
-  
+
   .navlist {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+      gap: 15px; /* Reducir espacio entre elementos */
   }
-  
+
   .navlist li {
-    font-size: 16px;
-    transition: transform 0.3s ease; 
+      font-size: 14px; /* Reducir tamaño de texto */
   }
-  
-  
-  .navlist a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  
-  .navlist a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -3px;
-    background-color: #ff7f50;
-    transition: width 0.3s ease;
-  }
-  
-  
-  .navlist a:hover {
-    color: #ff7f50;
-    transform: translateY(-2px);
-  }
-  
-  .navlist a:hover::after {
-    width: 100%;
-  }
-  
-  
+
   .sesion {
-    display: flex;
-    gap: 15px;
+      gap: 10px; /* Reducir espacio entre enlaces */
   }
-  
+
   .sesion a {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-    position: relative;
-    padding: 5px 10px;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.3s ease;
+      font-size: 14px; /* Texto más pequeño */
+      padding: 5px 8px;
   }
-  
-  .sesion a:hover {
-    background-color: #ff7f50;
-    color: white;
-    border: 2px solid #ff7f50;
-    transform: scale(1.05); 
+}
+
+/* Responsivo: Teléfonos */
+@media (max-width: 480px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .sesion a:active {
-    transform: scale(0.95); 
+
+  .navlist {
+      flex-direction: column; /* Apilar enlaces */
+      gap: 10px;
+      align-items: center;
   }
-  
+
+  .navlist li {
+      font-size: 14px;
+  }
+
+  .sesion {
+      flex-direction: column; /* Apilar botones de sesión */
+      gap: 10px;
+      align-items: center;
+  }
+
+  .sesion a {
+      font-size: 14px;
+      padding: 5px 12px;
+  }
+}

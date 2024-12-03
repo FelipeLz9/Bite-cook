@@ -1,36 +1,85 @@
+/* Formulario Principal */
 .profile-form {
     max-width: 600px;
-    margin: 0 auto; /* Centramos el formulario en la página */
+    margin: 0 auto; /* Centrar el formulario */
     padding: 20px;
 }
 
+/* Título del formulario */
 h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
+/* Agrupación de campos del formulario */
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espacio entre los campos del formulario */
+    gap: 20px; /* Espacio entre los campos */
 }
 
+/* Contenedor del botón */
 .form-button {
     display: flex;
-    justify-content: flex-end; /* El botón se coloca a la derecha */
+    justify-content: flex-end; /* Botón alineado a la derecha */
     margin-top: 20px;
 }
 
+/* Estilos del botón */
 button {
-    background-color: #FF6B00; /* Color de fondo naranja del botón */
+    background-color: #FF6B00; /* Fondo naranja */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #E65C00; /* Color de fondo cuando pasas el mouse */
+    background-color: #E65C00; /* Fondo más oscuro al pasar el cursor */
+}
+
+/* Responsivo: Tablets */
+@media (max-width: 768px) {
+    .profile-form {
+        padding: 15px; /* Reducir padding para pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 20px; /* Reducir el tamaño del título */
+    }
+
+    .form-group {
+        gap: 15px; /* Menos espacio entre campos */
+    }
+
+    button {
+        padding: 8px 15px; /* Botón más compacto */
+        font-size: 14px;
+    }
+}
+
+/* Responsivo: Teléfonos */
+@media (max-width: 480px) {
+    .profile-form {
+        max-width: 100%; /* Ancho completo */
+        padding: 10px; /* Padding mínimo */
+    }
+
+    h1 {
+        font-size: 18px; /* Texto más pequeño */
+        text-align: center; /* Centrar título */
+    }
+
+    .form-button {
+        justify-content: center; /* Centrar el botón */
+    }
+
+    button {
+        width: 100%; /* Botón ocupa todo el ancho */
+        padding: 10px; /* Espaciado uniforme */
+        font-size: 14px;
+    }
 }

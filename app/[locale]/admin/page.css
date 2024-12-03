@@ -1,133 +1,151 @@
 /* Estilos globales para toda la página */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('https://media.istockphoto.com/id/1059836082/es/foto/hombre-cocinero-preparando-la-comida-en-la-cocina.jpg?s=1024x1024&w=is&k=20&c=KvCObh4-0byypE969iu3tg4eT9Mdl7PvHy56htuZTCY='); ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://media.istockphoto.com/id/1059836082/es/foto/hombre-cocinero-preparando-la-comida-en-la-cocina.jpg?s=1024x1024&w=is&k=20&c=KvCObh4-0byypE969iu3tg4eT9Mdl7PvHy56htuZTCY=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.admin-container {
+  max-width: 800px;
+  width: 90%;
+  background-color: rgba(255, 245, 245, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+/* Estilo del título */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Estilo del formulario */
+.admin-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs y textarea */
+.admin-form input,
+.admin-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  color: #000;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus {
+  border-color: #ff7b7b;
+  outline: none;
+}
+
+/* Botón */
+button {
+  padding: 12px 25px;
+  background-color: #ff7b7b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #f15a5a;
+  transform: scale(1.05);
+}
+
+/* Mensajes de error y éxito */
+.error,
+.success {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+/* Respuesta móvil: Tablets */
+@media (max-width: 768px) {
   .admin-container {
-    max-width: 800px; /* Reducción del tamaño del contenedor */
-    width: 100%;
-    background-color: #fff5f562;
-    padding: 20px; /* Reducción del padding */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    height: auto;
-    min-height: 500px;
+      padding: 15px;
+      max-width: 90%;
   }
-  
-  /* Estilo del título */
+
   h1 {
-    font-size: 2.2rem; /* Tamaño de fuente ligeramente más pequeño */
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px; /* Menos espacio abajo */
-    font-weight: 600;
-    text-transform: uppercase;
+      font-size: 1.8rem;
   }
-  
-  /* Estilo del formulario */
-  .admin-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Menor espacio entre los campos */
+
+  button {
+      font-size: 0.9rem;
+      padding: 10px 15px;
   }
-  
-  /* Estilo de los labels */
-  .admin-form label {
-    font-weight: bold;
-    color: #333;
-    font-size: 1rem;
+}
+
+/* Respuesta móvil: Teléfonos */
+@media (max-width: 480px) {
+  body {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
   }
-  
-  /* Estilo de los inputs y textareas */
+
+  .admin-container {
+      padding: 10px;
+      min-height: auto;
+      width: 100%;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+  }
+
   .admin-form input,
   .admin-form textarea {
-    padding: 10px; /* Reducción del padding */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem; /* Ajuste del tamaño de la fuente */
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-    color: #000; /* Texto negro dentro de los inputs */
+      font-size: 0.9rem;
   }
-  
-  /* Estilos cuando el input está enfocado */
-  .admin-form input:focus,
-  .admin-form textarea:focus {
-    border-color: #ff7b7b;
-    outline: none;
-  }
-  
-  /* Estilo del botón */
+
   button {
-    padding: 12px 25px;
-    background-color: #ff7b7b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100%;
-    max-width: 300px;
-    margin-top: 20px;
+      font-size: 0.8rem;
+      padding: 8px 12px;
   }
-  
-  button:hover {
-    background-color: #f15a5a;
-    transform: scale(1.05);
-  }
-  
-  /* Estilo para los mensajes de error y éxito */
-  .error,
-  .success {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 15px;
-    font-weight: 500;
-  }
-  
-  /* Estilos para los mensajes de error */
-  .error {
-    color: red;
-  }
-  
-  /* Estilos para los mensajes de éxito */
-  .success {
-    color: green;
-  }
-  
-  /* Respuesta móvil */
-  @media (max-width: 768px) {
-    .admin-container {
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    .admin-form input,
-    .admin-form textarea {
-      font-size: 1rem;
-    }
-  
-    button {
-      font-size: 1rem;
-      padding: 10px 20px;
-    }
-  }
-  
+}
