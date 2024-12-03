@@ -12,10 +12,10 @@ const TeamPage: React.FC = () => {
   <section className="hero">
     <div className="hero-content">
       <h1>
-        We're on a mission to make life simpler and more enjoyable for everyone.
+        Nosotros estamos en la mision de buscar hacer la vida más fácil y rapida para todos.
       </h1>
       <p>
-        Our team is building the future of finance, one innovative product at a time.
+        Nuestro equipo está construyendo el futuro de las finanzas, un producto innovador a la vez.
       </p>
       <button className="learn-more">Learn more</button>
     </div>

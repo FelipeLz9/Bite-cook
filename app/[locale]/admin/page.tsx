@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -19,7 +21,7 @@ const AdminPage = () => {
 
     try {
       // Enviar la solicitud POST para agregar el plato
-      const response = await axios.post("http://localhost:3001/api/dishes", {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/dishes`, {
         name,
         description,
         price,

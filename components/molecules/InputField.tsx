@@ -14,7 +14,7 @@ const InputGroup: React.FC<InputGroupProps> = ({ label, type, value, onChange, p
   return (
     <div className="input-group">
       <Label text={label} />
-      <InputField type={type} value={value} onChange={onChange} placeholder={placeholder} />
+      <InputField type={type} value={value} onChange={onChange} placeholder={placeholder} name={''} />
     </div>
   );
 };

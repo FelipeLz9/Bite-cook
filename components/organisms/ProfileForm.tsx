@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
-import Input from '../atoms/InputField';
+import Input from '../atoms/InputField';  
 import PasswordInput from '../molecules/PasswordField';
 import Button from '../atoms/Button';
 import './ProfileForm.css';
@@ -22,7 +24,6 @@ export const ProfileForm = () => {
   };
 
   const handleSubmit = () => {
-    // Manejar el envío de datos
     console.log('Nombre:', name);
     console.log('Correo electrónico:', email);
     console.log('Contraseña:', password);
@@ -33,18 +34,15 @@ export const ProfileForm = () => {
       <h1>Mi perfil</h1>
       <div className="form-group">
         <Input 
-          label="Nombre" 
-          placeholder="Nombre" 
-          value={name} 
-          name="name" 
-          onChange={handleNameChange} 
-        />
+          placeholder="Nombre"
+          value={name}
+          name="name"
+          onChange={handleNameChange} type={''}        />
         <Input 
-          label="Correo electrónico" 
           placeholder="Correo electrónico" 
           type="email" 
           value={email} 
-          name="email" 
+          name="email"  
           onChange={handleEmailChange} 
         />
         <PasswordInput 
@@ -53,7 +51,7 @@ export const ProfileForm = () => {
         />
       </div>
       <div className="form-button">
-        <Button onClick={handleSubmit}>Guardar cambios</Button>
+        <Button onClick={handleSubmit} text="Guardar cambios" />
       </div>
     </div>
   );

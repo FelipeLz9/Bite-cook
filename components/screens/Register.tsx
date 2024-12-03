@@ -1,6 +1,7 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importar useRouter
@@ -27,7 +28,7 @@ export const RegisterForm = () => {
     }
 
     try {
-      await axios.post("http://localhost:3001/api/users", { name, email, password });
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/dishes`, { name, email, password });
       setSuccessMessage(t("registerSuccess"));
       setErrorMessage("");
 

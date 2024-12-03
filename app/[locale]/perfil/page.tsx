@@ -46,7 +46,11 @@ export default function Profile() {
                 setDishes(data);
             } catch (error: unknown) {
                 console.error('Error fetching dishes:', error);
-                setError(error.message);
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    setError('An unknown error occurred');
+                }
             } finally {
                 setLoading(false);
             }

@@ -11,8 +11,8 @@ const ContactUs: React.FC = () => {
         <div className="contact-us__container">
           <h1>Contact Us</h1>
           <p>
-            We're here to help. Get in touch and we'll get back to you as soon
-            as we can.
+            Estamos aquí para ayudar. Póngase en contacto y nos comunicaremos 
+            con usted tan pronto como podamos.
           </p>
           <form className="contact-us__form">
             <label htmlFor="name">Name</label>
