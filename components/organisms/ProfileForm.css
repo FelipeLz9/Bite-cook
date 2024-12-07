@@ -16,6 +16,7 @@ h1 {
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 20px; /* Espacio entre los campos */
 }
 

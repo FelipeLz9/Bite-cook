@@ -64,14 +64,6 @@ export default function Profile() {
         router.push(`/${locale}/`);
     };
 
-    if (loading) {
-        return <div>{t('loading')}</div>;
-    }
-
-    if (error) {
-        return <div>{t('error', { error })}</div>;
-    }
-
     return (
         <div className="profile-page">
             <Header />

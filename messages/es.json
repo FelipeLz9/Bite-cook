@@ -47,5 +47,71 @@
     "email": "Email",
     "password": "Password",
     "saveChanges": "Save Changes"
+  },
+  "ProfileForm": {
+    "title": "Mi Perfil",
+    "name":"Nombre",
+    "namePlaceholder": "Nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Correo electrónico",
+    "passwordPlaceholder": "Contraseña",
+    "saveChanges": "Guardar cambios",
+    "logName": "Nombre:",
+    "logEmail": "Correo electrónico:",
+    "logPassword": "Contraseña:"
+  },
+  "PasswordField": {
+    "label": "Contraseña",
+    "placeholder": "Ingrese su contraseña",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña"
+  },
+  "Sidebar": {
+    "recipes": "Recetas",
+    "orders": "Pedidos",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  },
+  "hero": {
+    "title": "Nosotros estamos en la misión de buscar hacer la vida más fácil y rápida para todos.",
+    "description": "Nuestro equipo está construyendo el futuro de las finanzas, un producto innovador a la vez.",
+    "learnMore": "Aprende más"
+  },
+  "team": {
+    "title": "Conoce al equipo",
+    "ceoTitle": "CEO, Co-fundador",
+    "ctoTitle": "CTO, Co-fundador"
+  },
+  "story": {
+    "title": "Nuestra historia",
+    "events": {
+      "2024_1": "Lanzamos nuestro primer producto",
+      "2024_2": "Recaudamos nuestra ronda semilla",
+      "2024_3": "Nos incorporamos y comenzamos a construir nuestro primer producto"
+    }
+  },
+  "contactUs": {
+    "title": "Contáctenos",
+    "description": "Estamos aquí para ayudar. Póngase en contacto y nos comunicaremos con usted tan pronto como podamos.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Su Nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "Su Correo Electrónico",
+      "message": "Mensaje",
+      "messagePlaceholder": "Su Mensaje",
+      "send": "Enviar"
+    }
+  },
+  "purchasedRecipes": {
+    "title": "Mis Recetas Compradas",
+    "description": "Aquí están las recetas que has comprado. ¡Disfruta cocinando!",
+    "noRecipes": "Aún no has comprado ninguna receta.",
+    "recipeCard": {
+      "ingredients": "Ingredientes",
+      "cookingTime": "Tiempo de Cocción",
+      "difficulty": "Dificultad",
+      "viewRecipe": "Ver Receta"
+    }
   }
 }

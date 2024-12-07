@@ -1,48 +1,51 @@
+'use client';
+
 import React from "react";
 import "./page.css";
 import Footer from "@/components/molecules/Footer/Footer";
 import { Header } from "@/components/molecules/Header/Header";
+import { useTranslations } from 'next-intl';
 
 const ContactUs: React.FC = () => {
+  const t = useTranslations('contactUs');
+
   return (
     <>
-      <Header /> {/* Agrega el header aquí */}
+      <Header />
       <div className="contact-us">
         <div className="contact-us__container">
-          <h1>Contact Us</h1>
-          <p>
-            Estamos aquí para ayudar. Póngase en contacto y nos comunicaremos 
-            con usted tan pronto como podamos.
-          </p>
+          <h1>{t('title')}</h1>
+          <p>{t('description')}</p>
           <form className="contact-us__form">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" />
+            <label htmlFor="name">{t('form.name')}</label>
+            <input type="text" id="name" name="name" placeholder={t('form.namePlaceholder')} />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('form.email')}</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Your Email"
+              placeholder={t('form.emailPlaceholder')}
             />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{t('form.message')}</label>
             <textarea
               id="message"
               name="message"
-              placeholder="Your Message"
+              placeholder={t('form.messagePlaceholder')}
               rows={5}
             ></textarea>
 
             <button type="submit" className="contact-us__button">
-              Send
+              {t('form.send')}
             </button>
           </form>
         </div>
       </div>
-      <Footer /> {/* Agrega el footer aquí */}
+      <Footer />
     </>
   );
 };
 
 export default ContactUs;
+

@@ -45,7 +45,7 @@ export const Header = () => {
         
         {
           isAuthenticated?
-          <Link href={`/${currentLocale}/perfil`}>{t('profile')}</Link>
+          <Link href={`/${currentLocale}/profile`}>{t('profile')}</Link>
           : <LoginRegister></LoginRegister>
         }
       </div>

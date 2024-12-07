@@ -41,12 +41,70 @@
     "searchPlaceholder": "Search for a dish",
     "orderNow": "Order Now"
   },
-  "Profile": {
-    "title": "Mi perfil",
-    "name": "Nombre",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "saveChanges": "Guardar cambios"
+  "ProfileForm": {
+    "title": "My profile",
+    "name": "Name",
+    "namePlaceholder": "Name",
+    "email":"Email",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "saveChanges": "Save changes",
+    "logName": "Name:",
+    "logEmail": "Email:",
+    "logPassword": "Password:"
+  },
+  "PasswordField": {
+    "label": "Password",
+    "placeholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "Sidebar": {
+    "recipes": "Recipes",
+    "orders": "Orders",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "hero": {
+    "title": "We are on a mission to make life easier and faster for everyone.",
+    "description": "Our team is building the future of finance, one innovative product at a time.",
+    "learnMore": "Learn more"
+  },
+  "team": {
+    "title": "Meet the team",
+    "ceoTitle": "CEO, Co-founder",
+    "ctoTitle": "CTO, Co-founder"
+  },
+  "story": {
+    "title": "Our story",
+    "events": {
+      "2024_1": "We launched our first product",
+      "2024_2": "We raised our seed round",
+      "2024_3": "We incorporated and started building our first product"
+    }
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "description": "We're here to help. Get in touch and we'll get back to you as soon as we can.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "Your Email",
+      "message": "Message",
+      "messagePlaceholder": "Your Message",
+      "send": "Send"
+    }
+  },
+  "purchasedRecipes": {
+    "title": "My Purchased Recipes",
+    "description": "Here are the recipes you've purchased. Enjoy cooking!",
+    "noRecipes": "You haven't purchased any recipes yet.",
+    "recipeCard": {
+      "ingredients": "Ingredients",
+      "cookingTime": "Cooking Time",
+      "difficulty": "Difficulty",
+      "viewRecipe": "View Recipe"
+    }
   }
-
 }
