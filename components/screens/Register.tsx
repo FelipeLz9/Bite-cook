@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importar useRouter
@@ -18,6 +19,7 @@ export const RegisterForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const t = useTranslations("auth");
+  const role = "USER";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,13 +30,13 @@ export const RegisterForm = () => {
     }
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users`, { name, email, password });
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/register`, { name, email, password, role});
       setSuccessMessage(t("registerSuccess"));
       setErrorMessage("");
 
       // Redirigir al login después de un registro exitoso
       setTimeout(() => {
-        router.push("/${locale}/login");
+        router.push("/login");
       }, 1500); // Esperar 1.5 segundos para mostrar el mensaje de éxito
 
       setName("");

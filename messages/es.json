@@ -8,7 +8,7 @@
     "confirmPassword": "Confirmar contraseña",
     "loginError": "Error al iniciar sesión. Inténtalo de nuevo.",
     "registerSuccess": "Usuario registrado con éxito.",
-    "registerError": "Error al registrar el usuario."
+    "registerError": "Las contraseñas no coinciden."
   },
   "Header": {
     "home": "Inicio",
@@ -42,27 +42,102 @@
     "orderNow": "Pedir ahora"
   },
   "Profile": {
-    "title": "Mi Perfil",
-    "name": "Nombre",
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "saveChanges": "Guardar cambios",
-    "loading": "Cargando...",
-    "error": "Error: {error}"
+    "title": "My Profile",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "saveChanges": "Save Changes"
   },
-  "AdminPage": {
-    "title": "Añadir un producto",
-    "name": "Nombre",
-    "namePlaceholder": "ej., Zapatillas de lana para mujer",
-    "description": "Descripción",
-    "descriptionPlaceholder": "ej., Los zapatos más cómodos del mundo para la vida en movimiento.",
-    "price": "Precio",
-    "pricePlaceholder": "ej., 95",
-    "image": "Imagen",
-    "imagePlaceholder": "ej., http://...",
-    "addProduct": "Añadir producto",
-    "errorMessage": "Error al añadir el producto",
-    "successMessage": "Producto añadido con éxito"
+  "ProfileForm": {
+    "title": "Mi Perfil",
+    "name":"Nombre",
+    "namePlaceholder": "Nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Correo electrónico",
+    "passwordPlaceholder": "Contraseña",
+    "saveChanges": "Guardar cambios",
+    "logName": "Nombre:",
+    "logEmail": "Correo electrónico:",
+    "logPassword": "Contraseña:"
+  },
+  "PasswordField": {
+    "label": "Contraseña",
+    "placeholder": "Ingrese su contraseña",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña"
+  },
+  "Sidebar": {
+    "recipes": "Recetas",
+    "orders": "Pedidos",
+    "settings": "Configuración",
+    "adminView": "Vista de administrador",
+    "logout": "Cerrar sesión"
+  },
+  "hero": {
+    "title": "Nosotros estamos en la misión de buscar hacer la vida más fácil y rápida para todos.",
+    "description": "Nuestro equipo está construyendo el futuro de las finanzas, un producto innovador a la vez.",
+    "learnMore": "Aprende más"
+  },
+  "team": {
+    "title": "Conoce al equipo",
+    "ceoTitle": "CEO, Co-fundador",
+    "ctoTitle": "CTO, Co-fundador"
+  },
+  "story": {
+    "title": "Nuestra historia",
+    "events": {
+      "2024_1": "Lanzamos nuestro primer producto",
+      "2024_2": "Recaudamos nuestra ronda semilla",
+      "2024_3": "Nos incorporamos y comenzamos a construir nuestro primer producto"
+    }
+  },
+  "contactUs": {
+    "title": "Contáctenos",
+    "description": "Estamos aquí para ayudar. Póngase en contacto y nos comunicaremos con usted tan pronto como podamos.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Su Nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "Su Correo Electrónico",
+      "message": "Mensaje",
+      "messagePlaceholder": "Su Mensaje",
+      "send": "Enviar"
+    }
+  },
+  "purchasedRecipes": {
+    "title": "Mis Recetas Compradas",
+    "description": "Aquí están las recetas que has comprado. ¡Disfruta cocinando!",
+    "noRecipes": "Aún no has comprado ninguna receta.",
+    "recipeCard": {
+      "ingredients": "Ingredientes",
+      "cookingTime": "Tiempo de Cocción",
+      "difficulty": "Dificultad",
+      "viewRecipe": "Ver Receta"
+    }
+  },
+  "orders": {
+    "title": "Mis Pedidos",
+    "description": "Aquí están tus pedidos recientes. Haz clic en un pedido para ver más detalles.",
+    "noOrders": "Aún no has realizado ningún pedido.",
+    "orderNumber": "Número de Pedido",
+    "date": "Fecha",
+    "status": "Estado",
+    "total": "Total",
+    "items": "Artículos",
+    "viewOrderDetails": "Ver Detalles del Pedido"
+  },
+  "settings": {
+    "title": "Configuración de Usuario",
+    "description": "Personaliza la configuración de tu cuenta a continuación.",
+    "address": "Dirección",
+    "addressPlaceholder": "Ingresa tu dirección",
+    "phoneNumber": "Número de Teléfono",
+    "phoneNumberPlaceholder": "Ingresa tu número de teléfono",
+    "emailNotifications": "Notificaciones por Correo",
+    "pushNotifications": "Notificaciones Push",
+    "privacyMode": "Modo de Privacidad",
+    "enable": "Activar",
+    "saveSettings": "Guardar Configuración"
   }
 }
 

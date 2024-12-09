@@ -1,0 +1,78 @@
+.purchased-recipes {
+    padding: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .purchased-recipes__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .purchased-recipes h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .purchased-recipes p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .recipe-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .recipe-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .recipe-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 0;
+  }
+  
+  .recipe-details {
+    padding: 0 1rem 1rem;
+  }
+  
+  .recipe-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .view-recipe-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-recipe-button:hover {
+    background-color: #0056b3;
+  }
+  
+  

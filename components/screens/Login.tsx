@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useLocale } from 'next-intl';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import Link from 'next/link';
 import './Form.css';
 
 export const LoginForm = () => {
@@ -29,7 +29,7 @@ export const LoginForm = () => {
       if (response.ok) {
         const { token } = await response.json();
         localStorage.setItem('authToken', token);
-        router.push(`/${locale}/perfil`);
+        router.push(`/${locale}/profile`);
       } else {
         const { message } = await response.json();
         setError(message || t('loginError'));
@@ -60,9 +60,9 @@ export const LoginForm = () => {
           required
         />
         <button type="submit">{t('login')}</button>
-        <a href={`/${locale}/register`} className="register-link">
+        <Link href={`/${locale}/register`} className="register-link">
           {t('register')}
-        </a>
+        </Link>
       </form>
     </div>
   );

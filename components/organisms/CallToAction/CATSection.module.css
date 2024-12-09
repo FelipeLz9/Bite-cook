@@ -1,57 +1,117 @@
+/* Hero Section */
 .hero {
-    background-image: url('./imgHome/comidaHome.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 1200px;
-    height: 400px;
-    margin: 0 auto;
-    position: relative; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  background-image: url('./imgHome/comidaHome.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Content dentro del Hero */
+.content {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+}
+
+/* Search Container */
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.searchInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 250px;
+}
+
+.orderButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.orderButton:hover {
+  background-color: #ff3333;
+}
+
+/* Responsivo: Tablets */
+@media (max-width: 768px) {
+  .hero {
+      height: 300px; /* Reducir altura */
+      padding: 20px;
   }
-  
+
   .content {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 20px;
-    border-radius: 10px;
+      padding: 15px;
   }
-  
+
   .title {
-    color: white;
-    font-size: 2rem;
+      font-size: 1.5rem; /* Reducir tamaño del título */
   }
-  
-  .searchContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
+
   .searchInput {
-    padding: 10px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    width: 250px;
+      width: 200px; /* Reducir ancho del input */
+      font-size: 0.9rem;
   }
-  
+
   .orderButton {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      font-size: 0.9rem;
+      padding: 8px 15px;
   }
-  
-  .orderButton:hover {
-    background-color: #ff3333;
+}
+
+/* Responsivo: Teléfonos */
+@media (max-width: 480px) {
+  .hero {
+      flex-direction: column; /* Apilar contenido */
+      height: auto;
+      padding: 20px 10px;
   }
-  
+
+  .title {
+      font-size: 1.2rem; /* Texto más pequeño */
+  }
+
+  .searchContainer {
+      flex-direction: column; /* Apilar input y botón */
+      align-items: center;
+      gap: 10px; /* Espacio entre input y botón */
+  }
+
+  .searchInput {
+      width: 100%; /* Tomar todo el ancho disponible */
+      font-size: 0.8rem;
+      border-radius: 5px; /* Redondear esquinas */
+  }
+
+  .orderButton {
+      width: 100%; /* Botón del mismo ancho que el input */
+      border-radius: 5px;
+      font-size: 0.8rem;
+      padding: 8px;
+  }
+}

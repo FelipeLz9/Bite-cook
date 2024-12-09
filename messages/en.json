@@ -41,28 +41,95 @@
     "searchPlaceholder": "Search for a dish",
     "orderNow": "Order Now"
   },
-  "Profile": {
-    "title": "My Profile",
+  "ProfileForm": {
+    "title": "My profile",
     "name": "Name",
-    "email": "Email",
-    "password": "Password",
-    "saveChanges": "Save Changes",
-    "loading": "Loading...",
-    "error": "Error: {error}"
+    "namePlaceholder": "Name",
+    "email":"Email",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "saveChanges": "Save changes",
+    "logName": "Name:",
+    "logEmail": "Email:",
+    "logPassword": "Password:"
   },
-  "AdminPage": {
-    "title": "Add a product",
-    "name": "Name",
-    "namePlaceholder": "e.g., Women's Wool Runners",
-    "description": "Description",
-    "descriptionPlaceholder": "e.g., The world's most comfortable shoes for life on the go.",
-    "price": "Price",
-    "pricePlaceholder": "e.g., 95",
-    "image": "Image",
-    "imagePlaceholder": "e.g., http://...",
-    "addProduct": "Add product",
-    "errorMessage": "Error adding the product",
-    "successMessage": "Product added successfully"
+  "PasswordField": {
+    "label": "Password",
+    "placeholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "Sidebar": {
+    "recipes": "Recipes",
+    "orders": "Orders",
+    "settings": "Settings",
+    "adminView": "Admin View",
+    "logout": "Log out"
+  },
+  "hero": {
+    "title": "We are on a mission to make life easier and faster for everyone.",
+    "description": "Our team is building the future of finance, one innovative product at a time.",
+    "learnMore": "Learn more"
+  },
+  "team": {
+    "title": "Meet the team",
+    "ceoTitle": "CEO, Co-founder",
+    "ctoTitle": "CTO, Co-founder"
+  },
+  "story": {
+    "title": "Our story",
+    "events": {
+      "2024_1": "We launched our first product",
+      "2024_2": "We raised our seed round",
+      "2024_3": "We incorporated and started building our first product"
+    }
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "description": "We're here to help. Get in touch and we'll get back to you as soon as we can.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "Your Email",
+      "message": "Message",
+      "messagePlaceholder": "Your Message",
+      "send": "Send"
+    }
+  },
+  "purchasedRecipes": {
+    "title": "My Purchased Recipes",
+    "description": "Here are the recipes you've purchased. Enjoy cooking!",
+    "noRecipes": "You haven't purchased any recipes yet.",
+    "recipeCard": {
+      "ingredients": "Ingredients",
+      "cookingTime": "Cooking Time",
+      "difficulty": "Difficulty",
+      "viewRecipe": "View Recipe"
+    }
+  },
+  "orders": {
+    "title": "My Orders",
+    "description": "Here are your recent orders. Click on an order to view more details.",
+    "noOrders": "You haven't placed any orders yet.",
+    "orderNumber": "Order Number",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "items": "Items",
+    "viewOrderDetails": "View Order Details"
+  },
+  "settings": {
+    "title": "User Settings",
+    "description": "Customize your account settings below.",
+    "address": "Address",
+    "addressPlaceholder": "Enter your address",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "emailNotifications": "Email Notifications",
+    "pushNotifications": "Push Notifications",
+    "privacyMode": "Privacy Mode",
+    "enable": "Enable",
+    "saveSettings": "Save Settings"
   }
 }
-

@@ -1,0 +1,60 @@
+/* Página de perfil */
+.profile-page {
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor de contenido */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px; /* Espacio uniforme entre los elementos */
+}
+
+/* Plantilla de perfil */
+.ProfileTemplate {
+    flex: 1; /* El ProfileTemplate ocupa más espacio */
+    margin-right: 20px; /* Espaciado a la derecha */
+}
+
+/* Sidebar */
+.Sidebar {
+    flex: 0.3; /* Sidebar ocupa menos espacio */
+    margin-left: 20px; /* Espaciado a la izquierda */
+}
+
+/* Responsivo: Tablets y dispositivos pequeños */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Cambiar a disposición en columna */
+        padding: 15px;
+    }
+
+    .ProfileTemplate {
+        margin-right: 0; /* Quitar espaciado lateral */
+        margin-bottom: 15px; /* Espaciado entre los bloques */
+    }
+
+    .Sidebar {
+        margin-left: 0; /* Quitar espaciado lateral */
+    }
+}
+
+/* Responsivo: Teléfonos */
+@media (max-width: 480px) {
+    .content-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .ProfileTemplate, 
+    .Sidebar {
+        flex: 1; /* Ambos ocupan el mismo ancho completo */
+        margin: 0; /* Sin márgenes laterales */
+    }
+}
