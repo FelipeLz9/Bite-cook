@@ -1,12 +1,14 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import "./page.css";
+import { useTranslations } from 'next-intl';
 
 const AdminPage = () => {
   const [name, setName] = useState("");
@@ -16,6 +18,7 @@ const AdminPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const router = useRouter();
+  const t = useTranslations('AdminPage');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +58,7 @@ const AdminPage = () => {
       setImage("");
   
       setTimeout(() => {
+        router.push("/admin");
         router.push("/admin");
       }, 2000);
     } catch (error: any) {

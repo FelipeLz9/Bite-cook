@@ -1,30 +1,34 @@
-import createMiddleware from 'next-intl/middleware';
-import { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const locales = ['en', 'es'];
+const defaultLocale = 'es';
 
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale: 'es'
-});
+export default function middleware(req: { nextUrl: { pathname: any; }; headers: { get: (arg0: string) => string; }; url: string | URL | undefined; }) {
+  const { pathname } = req.nextUrl;
 
-export default function (req: NextRequest) {
-  const pathname = req.nextUrl.pathname;
-
-  if (pathname === '/') {
-    return intlMiddleware(req);
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/_next/static') ||
+    pathname === '/favicon.ico'
+  ) {
+    return NextResponse.next();
   }
 
-  const hasLocaleInPathname = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  const hasLocale = locales.some((locale) =>
+    pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (hasLocaleInPathname) {
-    return intlMiddleware(req);
+  if (hasLocale) {
+    return NextResponse.next();
   }
 
-  const detectedLocale = req.headers.get('accept-language')?.split(',')[0].split('-')[0] || 'es';
-  return Response.redirect(new URL(`/${detectedLocale}${pathname}`, req.url));
+  const acceptLanguage = req.headers.get('accept-language') || '';
+  const detectedLocale =
+    locales.find((locale) => acceptLanguage.includes(locale)) || defaultLocale;
+
+  return NextResponse.redirect(
+    new URL(`/${detectedLocale}${pathname}`, req.url)
+  );
 }
 
 export const config = {

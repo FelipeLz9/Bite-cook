@@ -9,7 +9,7 @@
     "loginError": "Login error. Please try again.",
     "registerError": "Passwords do not match.",
     "registerSuccess": "Registration successful!"
-    },
+  },
   "Header": {
     "home": "Home",
     "aboutUs": "About us",

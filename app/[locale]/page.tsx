@@ -58,7 +58,6 @@ export default function Home({
         setLoading(false);
       }
     };
-
     fetchDishes();
   }, []);
 
@@ -95,3 +94,4 @@ export default function Home({
     </div>
   );
 }
+

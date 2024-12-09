@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Label from '../atoms/Label'; // Update this path to the correct one if necessary
 import InputField from '../atoms/InputField';
