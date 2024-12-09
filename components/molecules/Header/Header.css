@@ -60,6 +60,44 @@
   width: 100%;
 }
 
+/* Header right section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Language switcher */
+.language-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.language-button {
+  background-color: transparent;
+  border: 2px solid #ff7f50;
+  color: #ff7f50;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #ff7f50;
+  color: white;
+  transform: scale(1.05);
+}
+
+.language-button.active {
+  background-color: #ff7f50;
+  color: white;
+}
+
+.language-button:active {
+  transform: scale(0.95);
+}
+
 /* Sesión */
 .sesion {
   display: flex;
@@ -91,53 +129,76 @@
 /* Responsivo: Tablets */
 @media (max-width: 768px) {
   .header {
-      flex-wrap: wrap; /* Permitir que los elementos se ajusten en línea */
-      padding: 15px 20px;
+    flex-wrap: wrap;
+    padding: 15px 20px;
   }
 
   .navlist {
-      gap: 15px; /* Reducir espacio entre elementos */
+    gap: 15px;
   }
 
   .navlist li {
-      font-size: 14px; /* Reducir tamaño de texto */
+    font-size: 14px;
+  }
+
+  .header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .language-switcher {
+    order: -1;
+    width: 100%;
+    justify-content: center;
   }
 
   .sesion {
-      gap: 10px; /* Reducir espacio entre enlaces */
+    gap: 10px;
   }
 
   .sesion a {
-      font-size: 14px; /* Texto más pequeño */
-      padding: 5px 8px;
+    font-size: 14px;
+    padding: 5px 8px;
   }
 }
 
 /* Responsivo: Teléfonos */
 @media (max-width: 480px) {
   .header {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .navlist {
-      flex-direction: column; /* Apilar enlaces */
-      gap: 10px;
-      align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
 
   .navlist li {
-      font-size: 14px;
+    font-size: 14px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .language-switcher {
+    order: -1;
   }
 
   .sesion {
-      flex-direction: column; /* Apilar botones de sesión */
-      gap: 10px;
-      align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
 
   .sesion a {
-      font-size: 14px;
-      padding: 5px 12px;
+    font-size: 14px;
+    padding: 5px 12px;
   }
 }
+

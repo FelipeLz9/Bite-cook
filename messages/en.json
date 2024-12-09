@@ -63,6 +63,7 @@
     "recipes": "Recipes",
     "orders": "Orders",
     "settings": "Settings",
+    "adminView": "Admin View",
     "logout": "Log out"
   },
   "hero": {
@@ -106,5 +107,29 @@
       "difficulty": "Difficulty",
       "viewRecipe": "View Recipe"
     }
+  },
+  "orders": {
+    "title": "My Orders",
+    "description": "Here are your recent orders. Click on an order to view more details.",
+    "noOrders": "You haven't placed any orders yet.",
+    "orderNumber": "Order Number",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "items": "Items",
+    "viewOrderDetails": "View Order Details"
+  },
+  "settings": {
+    "title": "User Settings",
+    "description": "Customize your account settings below.",
+    "address": "Address",
+    "addressPlaceholder": "Enter your address",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "Enter your phone number",
+    "emailNotifications": "Email Notifications",
+    "pushNotifications": "Push Notifications",
+    "privacyMode": "Privacy Mode",
+    "enable": "Enable",
+    "saveSettings": "Save Settings"
   }
 }

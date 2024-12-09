@@ -1,16 +1,37 @@
-// components/ProtectedRoute.tsx
+"use client";
 
-import { Navigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
+import { useRouter } from 'next/navigation';
+import { ReactNode, useEffect } from 'react';
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const token = localStorage.getItem('authToken');
+interface ProtectedRouteProps {
+  children: ReactNode;
+}
 
-  if (!token) {
-    // Si no hay token, redirigir a la página de login
-    return <Navigate to="/login" replace />;
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+  const { isAuthenticated, isAdmin, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (!isAuthenticated) {
+        router.push('/login');
+      } else if (!isAdmin) {
+        router.push('/');
+        window.location.href = "/";
+      }
+    }
+  }, [isAuthenticated, isAdmin, isLoading, router]);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
   }
 
-  return children;  // Si hay token, renderizar el componente protegido
+  if (!isAuthenticated || !isAdmin) {
+    return null; 
+  }
+
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;

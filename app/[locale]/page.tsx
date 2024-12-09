@@ -30,10 +30,10 @@ export default function Home({
   const router = useRouter();
   const t = useTranslations();
 
-  const [locale, setLocale] = useState<string>("en"); 
+  const [locale, setLocale] = useState<string>("en");
   useEffect(() => {
     const getLocale = async () => {
-      const resolvedParams = await params; 
+      const resolvedParams = await params;
       setLocale(resolvedParams.locale);
     };
 
@@ -79,16 +79,18 @@ export default function Home({
     <div style={{ backgroundColor: "white" }}>
       <Header />
       <CATSection />
-      {dishes.map((dish) => (
-        <Card
-          key={dish.id}
-          title={dish.name}
-          price={dish.price}
-          image={dish.image}
-          description={dish.description}
-          isTrending={false}
-        />
-      ))}
+        <div className="flex flex-wrap">
+          {dishes.map((dish) => (
+            <Card
+              key={dish.id}
+              title={dish.name}
+              price={dish.price}
+              image={dish.image}
+              description={dish.description}
+              isTrending={false}
+            />
+          ))}
+        </div>
       <Footer />
     </div>
   );

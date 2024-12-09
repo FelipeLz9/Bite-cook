@@ -8,7 +8,7 @@
     "confirmPassword": "Confirmar contraseña",
     "loginError": "Error al iniciar sesión. Inténtalo de nuevo.",
     "registerSuccess": "Usuario registrado con éxito.",
-    "registerError": "Error al registrar el usuario."
+    "registerError": "Las contraseñas no coinciden."
   },
   "Header": {
     "home": "Inicio",
@@ -70,6 +70,7 @@
     "recipes": "Recetas",
     "orders": "Pedidos",
     "settings": "Configuración",
+    "adminView": "Vista de administrador",
     "logout": "Cerrar sesión"
   },
   "hero": {
@@ -113,5 +114,29 @@
       "difficulty": "Dificultad",
       "viewRecipe": "Ver Receta"
     }
+  },
+  "orders": {
+    "title": "Mis Pedidos",
+    "description": "Aquí están tus pedidos recientes. Haz clic en un pedido para ver más detalles.",
+    "noOrders": "Aún no has realizado ningún pedido.",
+    "orderNumber": "Número de Pedido",
+    "date": "Fecha",
+    "status": "Estado",
+    "total": "Total",
+    "items": "Artículos",
+    "viewOrderDetails": "Ver Detalles del Pedido"
+  },
+  "settings": {
+    "title": "Configuración de Usuario",
+    "description": "Personaliza la configuración de tu cuenta a continuación.",
+    "address": "Dirección",
+    "addressPlaceholder": "Ingresa tu dirección",
+    "phoneNumber": "Número de Teléfono",
+    "phoneNumberPlaceholder": "Ingresa tu número de teléfono",
+    "emailNotifications": "Notificaciones por Correo",
+    "pushNotifications": "Notificaciones Push",
+    "privacyMode": "Modo de Privacidad",
+    "enable": "Activar",
+    "saveSettings": "Guardar Configuración"
   }
 }
